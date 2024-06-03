@@ -1,0 +1,5 @@
+.gitignore
+.venv
+temporales
+mrm_djangoinicial.py
+requirements.txt
