@@ -1,5 +1,5 @@
 
-### Publicaciones Científicas:
+# Publicaciones Científicas
 
 1. **"Impacto de la Auditoría Concurrente en la Adherencia a Protocolos Clínicos en Unidades de Cuidados Intensivos"**  
    - Autor(es): Thompson R, Anderson E, Smith L, et al.
@@ -20,4 +20,3 @@
    - Autor(es): Brown T, Miller R, Davis K, et al.
    - Publicación: Journal of Health Services Research & Policy, 2018.
    - Enlace: [Journal of Health Services Research & Policy](https://journals.sagepub.com/doi/10.1177/1355819618767507)
-
