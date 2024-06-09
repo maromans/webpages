@@ -1,5 +1,5 @@
 <p>Para implementar un sistema de auditoría médica en tiempo real utilizando Python, primero necesitarás acceder a la base de datos existente en el hospital interzonas. Asumiendo que tienes acceso a esta base de datos, aquí hay una descripción general de cómo podrías proceder, junto con algunas librerías comunes de Python que podrían ser útiles:</p>
-<h3 id="1-acceso-a-la-base-de-datos-">1. Acceso a la base de datos:</h3>
+<h3 id="1-acceso-a-la-base-de-datos">1. Acceso a la base de datos:</h3>
 <ul>
 <li>Utiliza una biblioteca de Python compatible con la base de datos del hospital. Por ejemplo:<ul>
 <li>Para bases de datos SQL: <code>SQLAlchemy</code>, <code>psycopg2</code> (para PostgreSQL), <code>mysql-connector-python</code> (para MySQL), <code>pyodbc</code> (para SQL Server), etc.</li>
@@ -7,26 +7,26 @@
 </ul>
 </li>
 </ul>
-<h3 id="2-procesamiento-de-datos-en-tiempo-real-">2. Procesamiento de datos en tiempo real:</h3>
+<h3 id="2-procesamiento-de-datos-en-tiempo-real">2. Procesamiento de datos en tiempo real:</h3>
 <ul>
 <li>Para el procesamiento en tiempo real, puedes utilizar la biblioteca <code>pandas</code> para manipulación y análisis de datos.</li>
 </ul>
-<h3 id="3-implementaci-n-del-sistema-de-auditor-a-">3. Implementación del sistema de auditoría:</h3>
+<h3 id="3-implementación-del-sistema-de-auditoría">3. Implementación del sistema de auditoría:</h3>
 <ul>
 <li>Define reglas y criterios de auditoría médica basados en las necesidades del hospital.</li>
 <li>Utiliza <code>pandas</code> u otras bibliotecas para procesar y analizar los datos en tiempo real, aplicando las reglas de auditoría definidas.</li>
 <li>Utiliza <code>matplotlib</code> o <code>seaborn</code> para visualizar los resultados de la auditoría de manera clara y comprensible.</li>
 </ul>
-<h3 id="4-notificaci-n-y-acciones-">4. Notificación y acciones:</h3>
+<h3 id="4-notificación-y-acciones">4. Notificación y acciones:</h3>
 <ul>
 <li>Para notificar sobre resultados de auditoría o tomar acciones, puedes utilizar la biblioteca <code>smtplib</code> para enviar correos electrónicos, o <code>twilio</code> para enviar mensajes de texto o notificaciones a través de SMS o WhatsApp.</li>
 </ul>
-<h3 id="5-seguridad-y-manejo-de-errores-">5. Seguridad y manejo de errores:</h3>
+<h3 id="5-seguridad-y-manejo-de-errores">5. Seguridad y manejo de errores:</h3>
 <ul>
 <li>Asegúrate de manejar adecuadamente la seguridad de los datos, especialmente cuando se trata de información médica sensible.</li>
 <li>Utiliza bloques <code>try-except</code> para manejar errores de manera adecuada y evitar interrupciones en el flujo de trabajo.</li>
 </ul>
-<h3 id="ejemplo-de-flujo-de-trabajo-">Ejemplo de flujo de trabajo:</h3>
+<h3 id="ejemplo-de-flujo-de-trabajo">Ejemplo de flujo de trabajo:</h3>
 <ol>
 <li>Conecta a la base de datos del hospital.</li>
 <li>Ejecuta consultas para obtener datos en tiempo real.</li>
@@ -36,4 +36,3 @@
 <li>Repite el proceso en un bucle continuo para mantener la auditoría en tiempo real.</li>
 </ol>
 <p>Este es solo un esquema básico. La implementación real dependerá de los detalles específicos de la base de datos del hospital, las reglas de auditoría requeridas y otros requisitos específicos del sistema.</p>
-
