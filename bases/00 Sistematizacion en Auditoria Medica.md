@@ -1,10 +1,10 @@
-## Sistematizacion de Auditoria Medica
+# Sistematizacion de Auditoria Medica
 
-### Prólogo
+## Prólogo
 
 La auditoría médica se erige como una herramienta fundamental en la gestión de la calidad en los servicios de salud. En un entorno hospitalario, donde la precisión y la excelencia en la atención médica son esenciales, la auditoría desempeña un papel crucial en la evaluación y mejora continua de los procesos asistenciales. Este informe tiene como objetivo proporcionar una guía detallada para la implementación de un sistema de auditoría médica en un hospital en Argentina, subrayando la importancia de la auditoría y el papel preeminente de la ciencia de datos, especialmente utilizando el lenguaje Python y sus numerosas librerías.
 
-#### La Importancia de la Auditoría Médica
+### La Importancia de la Auditoría Médica
 
 La auditoría médica es vital para garantizar que los servicios de salud se presten conforme a los más altos estándares de calidad. A través de la auditoría, se pueden identificar áreas de mejora, detectar errores y prevenir la ocurrencia de eventos adversos. Además, la auditoría proporciona una base objetiva para la toma de decisiones, apoyando la formulación de políticas y estrategias que promuevan la seguridad del paciente y la eficiencia operativa.
 

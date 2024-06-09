@@ -1,8 +1,8 @@
-### Auditoría Concurrente en el Ámbito de la Salud: Garantizando la Calidad Asistencial en Tiempo Real
+# Auditoría Concurrente en el Ámbito de la Salud: Garantizando la Calidad Asistencial en Tiempo Real
 
 La auditoría concurrente, una práctica estratégica dentro del ámbito médico, representa una vanguardia en la garantía de la calidad asistencial al permitir una evaluación continua y proactiva de los procesos de atención médica mientras estos se desarrollan. Este enfoque, meticuloso y dinámico, se erige como una herramienta fundamental para identificar oportunidades de mejora de manera inmediata, mitigando riesgos y promoviendo la excelencia en la atención al paciente. A continuación, se detallan los pasos cruciales que definen este proceso:
 
-### 1. Definir los Objetivos Específicos
+## 1. Definir los Objetivos Específicos
 
 En el contexto de la auditoría concurrente, la definición precisa de objetivos es un primer pilar esencial. Estos objetivos, que abarcan desde asegurar la estricta adherencia a protocolos clínicos hasta monitorear la administración de medicamentos en tiempo real, establecen la dirección estratégica de la evaluación y análisis de la calidad asistencial.
 

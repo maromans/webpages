@@ -1,4 +1,4 @@
-### Ejemplos de Instituciones:
+# Ejemplos de Instituciones
 
 1. **Mayo Clinic, Rochester, Minnesota, Estados Unidos:** La Mayo Clinic ha implementado un programa de auditoría concurrente en diversas áreas, desde unidades de cuidados intensivos hasta servicios quirúrgicos, con el objetivo de mejorar la calidad y seguridad de la atención médica.
 

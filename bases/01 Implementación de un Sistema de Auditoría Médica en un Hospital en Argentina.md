@@ -1,8 +1,8 @@
-### Plan de Acción para la Implementación de un Sistema de Auditoría Médica en un Hospital en Argentina
+# Plan de Acción para la Implementación de un Sistema de Auditoría Médica en un Hospital en Argentina
 
 Este plan de acción detalla los pasos necesarios para implementar diferentes tipos de auditoría médica en un hospital. Cada tipo de auditoría tiene sus propios objetivos y metodologías, que se describen a continuación.
 
-#### 1. Auditoría Concurrente
+## 1. Auditoría Concurrente
 
 **Objetivo:** Evaluar y asegurar la calidad de la atención médica mientras se está proporcionando.
 
@@ -32,7 +32,7 @@ Este plan de acción detalla los pasos necesarios para implementar diferentes ti
 7. **Revisar y Ajustar:**
    - Realizar reuniones periódicas para revisar los hallazgos y ajustar el proceso según sea necesario.
 
-#### 2. Auditoría Retrospectiva
+### 2. Auditoría Retrospectiva
 
 **Objetivo:** Evaluar la calidad de la atención médica después de que el servicio ha sido prestado.
 
