@@ -13,9 +13,6 @@ if not os.path.exists(output_directory):
 # Lista para almacenar los enlaces al índice
 index_links = []
 
-# Información del Dr. Mansilla Marcelo
-autor_info = 'Dr. Mansilla Marcelo<br>maromansios@gmail.com'
-
 # Procesar cada archivo Markdown en el directorio
 for filename in os.listdir(markdown_directory):
     if filename.endswith('.md'):
@@ -28,10 +25,6 @@ for filename in os.listdir(markdown_directory):
 
         # Convertir Markdown a HTML usando pandoc
         subprocess.run(['pandoc', '-s', filepath, '-o', output_filepath])
-
-        # Añadir información del autor al final del archivo HTML
-        with open(output_filepath, 'a', encoding='utf-8') as html_file:
-            html_file.write(f'<footer>{autor_info}</footer>')
 
         # Añadir enlace al índice
         index_links.append(f'<li><a href="{html_filename}">{filename.replace(".md", "")}</a></li>')
