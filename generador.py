@@ -4,7 +4,7 @@ import subprocess
 # Directorio que contiene los archivos Markdown
 markdown_directory = '/Users/marcelomansilla/proyectos/webpages/bases'
 # Directorio donde se guardarán las páginas HTML generadas
-output_directory = '/Users/marcelomansilla/proyectos/webpages/'
+output_directory = '/Users/marcelomansilla/proyectos/webpages/salida'
 
 # Crear el directorio de salida si no existe
 if not os.path.exists(output_directory):
