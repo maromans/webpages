@@ -1,358 +1,182 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>01 Implementación de un Sistema de Auditoría Médica en un Hospital en Argentina</title>
-  <style>
-    html {
-      color: #1a1a1a;
-      background-color: #fdfdfd;
-    }
-    body {
-      margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      overflow-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
-    }
-    @media (max-width: 600px) {
-      body {
-        font-size: 0.9em;
-        padding: 12px;
-      }
-      h1 {
-        font-size: 1.8em;
-      }
-    }
-    @media print {
-      html {
-        background-color: white;
-      }
-      body {
-        background-color: transparent;
-        color: black;
-        font-size: 12pt;
-      }
-      p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-      }
-      h2, h3, h4 {
-        page-break-after: avoid;
-      }
-    }
-    p {
-      margin: 1em 0;
-    }
-    a {
-      color: #1a1a1a;
-    }
-    a:visited {
-      color: #1a1a1a;
-    }
-    img {
-      max-width: 100%;
-    }
-    svg {
-      height: auto;
-      max-width: 100%;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.4em;
-    }
-    h5, h6 {
-      font-size: 1em;
-      font-style: italic;
-    }
-    h6 {
-      font-weight: normal;
-    }
-    ol, ul {
-      padding-left: 1.7em;
-      margin-top: 1em;
-    }
-    li > ol, li > ul {
-      margin-top: 0;
-    }
-    blockquote {
-      margin: 1em 0 1em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
-      color: #606060;
-    }
-    code {
-      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
-      font-size: 85%;
-      margin: 0;
-      hyphens: manual;
-    }
-    pre {
-      margin: 1em 0;
-      overflow: auto;
-    }
-    pre code {
-      padding: 0;
-      overflow: visible;
-      overflow-wrap: normal;
-    }
-    .sourceCode {
-     background-color: transparent;
-     overflow: visible;
-    }
-    hr {
-      background-color: #1a1a1a;
-      border: none;
-      height: 1px;
-      margin: 1em 0;
-    }
-    table {
-      margin: 1em 0;
-      border-collapse: collapse;
-      width: 100%;
-      overflow-x: auto;
-      display: block;
-      font-variant-numeric: lining-nums tabular-nums;
-    }
-    table caption {
-      margin-bottom: 0.75em;
-    }
-    tbody {
-      margin-top: 0.5em;
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
-    }
-    th {
-      border-top: 1px solid #1a1a1a;
-      padding: 0.25em 0.5em 0.25em 0.5em;
-    }
-    td {
-      padding: 0.125em 0.5em 0.25em 0.5em;
-    }
-    header {
-      margin-bottom: 4em;
-      text-align: center;
-    }
-    #TOC li {
-      list-style: none;
-    }
-    #TOC ul {
-      padding-left: 1.3em;
-    }
-    #TOC > ul {
-      padding-left: 0;
-    }
-    #TOC a:not(:hover) {
-      text-decoration: none;
-    }
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
-  </style>
-</head>
-<body>
-<h3
-id="plan-de-acción-para-la-implementación-de-un-sistema-de-auditoría-médica-en-un-hospital-en-argentina">Plan
-de Acción para la Implementación de un Sistema de Auditoría Médica en un
-Hospital en Argentina</h3>
-<p>Este plan de acción detalla los pasos necesarios para implementar
-diferentes tipos de auditoría médica en un hospital. Cada tipo de
-auditoría tiene sus propios objetivos y metodologías, que se describen a
-continuación.</p>
-<h4 id="auditoría-concurrente">1. Auditoría Concurrente</h4>
-<p><strong>Objetivo:</strong> Evaluar y asegurar la calidad de la
-atención médica mientras se está proporcionando.</p>
-<p><strong>Pasos:</strong></p>
-<ol type="1">
-<li><strong>Definir los Objetivos Específicos:</strong>
-<ul>
-<li>Asegurar la adherencia a protocolos clínicos durante la
-atención.</li>
-<li>Monitorear la administración de medicamentos en tiempo real.</li>
-</ul></li>
-<li><strong>Seleccionar el Equipo de Auditoría:</strong>
-<ul>
-<li>Designar un grupo de auditores médicos con experiencia en atención
-clínica y gestión de calidad.</li>
-</ul></li>
-<li><strong>Desarrollar Herramientas de Monitoreo:</strong>
-<ul>
-<li>Crear listas de verificación y formularios de evaluación para uso en
-tiempo real.</li>
-</ul></li>
-<li><strong>Implementar el Proceso de Auditoría:</strong>
-<ul>
-<li>Realizar observaciones directas en salas de atención y
-quirófanos.</li>
-<li>Utilizar sistemas electrónicos para monitoreo de administración de
-medicamentos y procedimientos.</li>
-</ul></li>
-<li><strong>Documentar y Analizar Resultados:</strong>
-<ul>
-<li>Recopilar datos de manera continua y analizar tendencias y patrones
-de inmediato.</li>
-</ul></li>
-<li><strong>Implementar Acciones Correctivas:</strong>
-<ul>
-<li>Intervenir inmediatamente en caso de desviaciones de los
-estándares.</li>
-<li>Proporcionar feedback continuo al personal médico.</li>
-</ul></li>
-<li><strong>Revisar y Ajustar:</strong>
-<ul>
-<li>Realizar reuniones periódicas para revisar los hallazgos y ajustar
-el proceso según sea necesario.</li>
-</ul></li>
-</ol>
-<h4 id="auditoría-retrospectiva">2. Auditoría Retrospectiva</h4>
-<p><strong>Objetivo:</strong> Evaluar la calidad de la atención médica
-después de que el servicio ha sido prestado.</p>
-<p><strong>Pasos:</strong></p>
-<ol type="1">
-<li><strong>Definir los Objetivos Específicos:</strong>
-<ul>
-<li>Evaluar la documentación médica.</li>
-<li>Revisar la adecuación de diagnósticos y tratamientos
-post-factum.</li>
-</ul></li>
-<li><strong>Seleccionar el Equipo de Auditoría:</strong>
-<ul>
-<li>Reclutar auditores con habilidades en análisis de datos y revisión
-de registros médicos.</li>
-</ul></li>
-<li><strong>Desarrollar Herramientas de Evaluación:</strong>
-<ul>
-<li>Crear guías de revisión de historias clínicas y criterios de
-evaluación de calidad.</li>
-</ul></li>
-<li><strong>Implementar el Proceso de Auditoría:</strong>
-<ul>
-<li>Revisar una muestra representativa de historias clínicas.</li>
-<li>Analizar los datos recolectados para identificar áreas de
-mejora.</li>
-</ul></li>
-<li><strong>Documentar y Analizar Resultados:</strong>
-<ul>
-<li>Generar informes detallados con hallazgos y recomendaciones.</li>
-</ul></li>
-<li><strong>Implementar Acciones Correctivas:</strong>
-<ul>
-<li>Desarrollar planes de acción basados en los resultados de la
-auditoría.</li>
-<li>Capacitar al personal en áreas identificadas como deficientes.</li>
-</ul></li>
-<li><strong>Revisar y Ajustar:</strong>
-<ul>
-<li>Programar auditorías retrospectivas regulares para monitorear el
-progreso y ajustar las estrategias de intervención.</li>
-</ul></li>
-</ol>
-<h4 id="auditoría-externa">3. Auditoría Externa</h4>
-<p><strong>Objetivo:</strong> Obtener una evaluación imparcial de la
-calidad de la atención médica.</p>
-<p><strong>Pasos:</strong></p>
-<ol type="1">
-<li><strong>Definir los Objetivos Específicos:</strong>
-<ul>
-<li>Validar los procesos internos mediante una revisión
-independiente.</li>
-<li>Obtener acreditaciones o certificaciones de calidad.</li>
-</ul></li>
-<li><strong>Seleccionar la Entidad de Auditoría:</strong>
-<ul>
-<li>Contratar una organización externa reconocida y con experiencia en
-auditorías médicas.</li>
-</ul></li>
-<li><strong>Preparar la Documentación:</strong>
-<ul>
-<li>Compilar todos los registros necesarios y preparar al personal para
-la auditoría.</li>
-</ul></li>
-<li><strong>Implementar el Proceso de Auditoría:</strong>
-<ul>
-<li>Facilitar el acceso a la entidad auditora a todas las áreas y
-documentación relevante.</li>
-<li>Colaborar con los auditores externos durante su evaluación.</li>
-</ul></li>
-<li><strong>Documentar y Analizar Resultados:</strong>
-<ul>
-<li>Recibir y analizar el informe final de la auditoría externa.</li>
-</ul></li>
-<li><strong>Implementar Acciones Correctivas:</strong>
-<ul>
-<li>Desarrollar un plan de acción basado en las recomendaciones de la
-auditoría externa.</li>
-<li>Implementar mejoras y cambios sugeridos.</li>
-</ul></li>
-<li><strong>Revisar y Ajustar:</strong>
-<ul>
-<li>Programar auditorías externas periódicas para asegurar el
-mantenimiento de los estándares de calidad.</li>
-</ul></li>
-</ol>
-<h4 id="auditoría-interna">4. Auditoría Interna</h4>
-<p><strong>Objetivo:</strong> Evaluar y mejorar continuamente los
-procesos internos de atención médica.</p>
-<p><strong>Pasos:</strong></p>
-<ol type="1">
-<li><strong>Definir los Objetivos Específicos:</strong>
-<ul>
-<li>Identificar áreas de mejora interna.</li>
-<li>Garantizar la conformidad con los estándares internos y
-externos.</li>
-</ul></li>
-<li><strong>Seleccionar el Equipo de Auditoría:</strong>
-<ul>
-<li>Formar un equipo multidisciplinario de auditores internos.</li>
-</ul></li>
-<li><strong>Desarrollar Herramientas de Evaluación:</strong>
-<ul>
-<li>Crear protocolos y guías específicas para la auditoría interna.</li>
-</ul></li>
-<li><strong>Implementar el Proceso de Auditoría:</strong>
-<ul>
-<li>Realizar evaluaciones periódicas de diferentes departamentos y
-procesos.</li>
-</ul></li>
-<li><strong>Documentar y Analizar Resultados:</strong>
-<ul>
-<li>Generar informes internos con hallazgos y recomendaciones.</li>
-</ul></li>
-<li><strong>Implementar Acciones Correctivas:</strong>
-<ul>
-<li>Desarrollar y ejecutar planes de mejora continua.</li>
-<li>Realizar capacitaciones y talleres internos.</li>
-</ul></li>
-<li><strong>Revisar y Ajustar:</strong>
-<ul>
-<li>Monitorear continuamente las áreas auditadas y realizar ajustes
-según sea necesario.</li>
-</ul></li>
-</ol>
-<h3 id="conclusión">Conclusión</h3>
-<p>La implementación de un sistema de auditoría médica en un hospital en
-Argentina requiere un enfoque estructurado y sistemático. Cada tipo de
-auditoría, ya sea concurrente, retrospectiva, externa o interna, tiene
-sus propios objetivos y metodologías específicas. Un plan de acción
-claro y bien definido garantiza que los objetivos se cumplan de manera
-eficiente, promoviendo la calidad y seguridad en la atención médica.</p>
-</body>
-</html>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <h3 id="plan-de-acci-n-para-la-implementaci-n-de-un-sistema-de-auditor-a-m-dica-en-un-hospital-en-argentina">Plan de Acción para la Implementación de un Sistema de Auditoría Médica en un Hospital en Argentina</h3>
+    <p>Este plan de acción detalla los pasos necesarios para implementar diferentes tipos de auditoría médica en un hospital. Cada tipo de auditoría tiene sus propios objetivos y metodologías, que se describen a continuación.</p>
+    <h4 id="1-auditor-a-concurrente">1. Auditoría Concurrente</h4>
+    <p><strong>Objetivo:</strong> Evaluar y asegurar la calidad de la atención médica mientras se está proporcionando.</p>
+    <p><strong>Pasos:</strong></p>
+    <ol>
+    <li><p><strong>Definir los Objetivos Específicos:</strong></p>
+    <ul>
+    <li>Asegurar la adherencia a protocolos clínicos durante la atención.</li>
+    <li>Monitorear la administración de medicamentos en tiempo real.</li>
+    </ul>
+    </li>
+    <li><p><strong>Seleccionar el Equipo de Auditoría:</strong></p>
+    <ul>
+    <li>Designar un grupo de auditores médicos con experiencia en atención clínica y gestión de calidad.</li>
+    </ul>
+    </li>
+    <li><p><strong>Desarrollar Herramientas de Monitoreo:</strong></p>
+    <ul>
+    <li>Crear listas de verificación y formularios de evaluación para uso en tiempo real.</li>
+    </ul>
+    </li>
+    <li><p><strong>Implementar el Proceso de Auditoría:</strong></p>
+    <ul>
+    <li>Realizar observaciones directas en salas de atención y quirófanos.</li>
+    <li>Utilizar sistemas electrónicos para monitoreo de administración de medicamentos y procedimientos.</li>
+    </ul>
+    </li>
+    <li><p><strong>Documentar y Analizar Resultados:</strong></p>
+    <ul>
+    <li>Recopilar datos de manera continua y analizar tendencias y patrones de inmediato.</li>
+    </ul>
+    </li>
+    <li><p><strong>Implementar Acciones Correctivas:</strong></p>
+    <ul>
+    <li>Intervenir inmediatamente en caso de desviaciones de los estándares.</li>
+    <li>Proporcionar feedback continuo al personal médico.</li>
+    </ul>
+    </li>
+    <li><p><strong>Revisar y Ajustar:</strong></p>
+    <ul>
+    <li>Realizar reuniones periódicas para revisar los hallazgos y ajustar el proceso según sea necesario.</li>
+    </ul>
+    </li>
+    </ol>
+    <h4 id="2-auditor-a-retrospectiva">2. Auditoría Retrospectiva</h4>
+    <p><strong>Objetivo:</strong> Evaluar la calidad de la atención médica después de que el servicio ha sido prestado.</p>
+    <p><strong>Pasos:</strong></p>
+    <ol>
+    <li><p><strong>Definir los Objetivos Específicos:</strong></p>
+    <ul>
+    <li>Evaluar la documentación médica.</li>
+    <li>Revisar la adecuación de diagnósticos y tratamientos post-factum.</li>
+    </ul>
+    </li>
+    <li><p><strong>Seleccionar el Equipo de Auditoría:</strong></p>
+    <ul>
+    <li>Reclutar auditores con habilidades en análisis de datos y revisión de registros médicos.</li>
+    </ul>
+    </li>
+    <li><p><strong>Desarrollar Herramientas de Evaluación:</strong></p>
+    <ul>
+    <li>Crear guías de revisión de historias clínicas y criterios de evaluación de calidad.</li>
+    </ul>
+    </li>
+    <li><p><strong>Implementar el Proceso de Auditoría:</strong></p>
+    <ul>
+    <li>Revisar una muestra representativa de historias clínicas.</li>
+    <li>Analizar los datos recolectados para identificar áreas de mejora.</li>
+    </ul>
+    </li>
+    <li><p><strong>Documentar y Analizar Resultados:</strong></p>
+    <ul>
+    <li>Generar informes detallados con hallazgos y recomendaciones.</li>
+    </ul>
+    </li>
+    <li><p><strong>Implementar Acciones Correctivas:</strong></p>
+    <ul>
+    <li>Desarrollar planes de acción basados en los resultados de la auditoría.</li>
+    <li>Capacitar al personal en áreas identificadas como deficientes.</li>
+    </ul>
+    </li>
+    <li><p><strong>Revisar y Ajustar:</strong></p>
+    <ul>
+    <li>Programar auditorías retrospectivas regulares para monitorear el progreso y ajustar las estrategias de intervención.</li>
+    </ul>
+    </li>
+    </ol>
+    <h4 id="3-auditor-a-externa">3. Auditoría Externa</h4>
+    <p><strong>Objetivo:</strong> Obtener una evaluación imparcial de la calidad de la atención médica.</p>
+    <p><strong>Pasos:</strong></p>
+    <ol>
+    <li><p><strong>Definir los Objetivos Específicos:</strong></p>
+    <ul>
+    <li>Validar los procesos internos mediante una revisión independiente.</li>
+    <li>Obtener acreditaciones o certificaciones de calidad.</li>
+    </ul>
+    </li>
+    <li><p><strong>Seleccionar la Entidad de Auditoría:</strong></p>
+    <ul>
+    <li>Contratar una organización externa reconocida y con experiencia en auditorías médicas.</li>
+    </ul>
+    </li>
+    <li><p><strong>Preparar la Documentación:</strong></p>
+    <ul>
+    <li>Compilar todos los registros necesarios y preparar al personal para la auditoría.</li>
+    </ul>
+    </li>
+    <li><p><strong>Implementar el Proceso de Auditoría:</strong></p>
+    <ul>
+    <li>Facilitar el acceso a la entidad auditora a todas las áreas y documentación relevante.</li>
+    <li>Colaborar con los auditores externos durante su evaluación.</li>
+    </ul>
+    </li>
+    <li><p><strong>Documentar y Analizar Resultados:</strong></p>
+    <ul>
+    <li>Recibir y analizar el informe final de la auditoría externa.</li>
+    </ul>
+    </li>
+    <li><p><strong>Implementar Acciones Correctivas:</strong></p>
+    <ul>
+    <li>Desarrollar un plan de acción basado en las recomendaciones de la auditoría externa.</li>
+    <li>Implementar mejoras y cambios sugeridos.</li>
+    </ul>
+    </li>
+    <li><p><strong>Revisar y Ajustar:</strong></p>
+    <ul>
+    <li>Programar auditorías externas periódicas para asegurar el mantenimiento de los estándares de calidad.</li>
+    </ul>
+    </li>
+    </ol>
+    <h4 id="4-auditor-a-interna">4. Auditoría Interna</h4>
+    <p><strong>Objetivo:</strong> Evaluar y mejorar continuamente los procesos internos de atención médica.</p>
+    <p><strong>Pasos:</strong></p>
+    <ol>
+    <li><p><strong>Definir los Objetivos Específicos:</strong></p>
+    <ul>
+    <li>Identificar áreas de mejora interna.</li>
+    <li>Garantizar la conformidad con los estándares internos y externos.</li>
+    </ul>
+    </li>
+    <li><p><strong>Seleccionar el Equipo de Auditoría:</strong></p>
+    <ul>
+    <li>Formar un equipo multidisciplinario de auditores internos.</li>
+    </ul>
+    </li>
+    <li><p><strong>Desarrollar Herramientas de Evaluación:</strong></p>
+    <ul>
+    <li>Crear protocolos y guías específicas para la auditoría interna.</li>
+    </ul>
+    </li>
+    <li><p><strong>Implementar el Proceso de Auditoría:</strong></p>
+    <ul>
+    <li>Realizar evaluaciones periódicas de diferentes departamentos y procesos.</li>
+    </ul>
+    </li>
+    <li><p><strong>Documentar y Analizar Resultados:</strong></p>
+    <ul>
+    <li>Generar informes internos con hallazgos y recomendaciones.</li>
+    </ul>
+    </li>
+    <li><p><strong>Implementar Acciones Correctivas:</strong></p>
+    <ul>
+    <li>Desarrollar y ejecutar planes de mejora continua.</li>
+    <li>Realizar capacitaciones y talleres internos.</li>
+    </ul>
+    </li>
+    <li><p><strong>Revisar y Ajustar:</strong></p>
+    <ul>
+    <li>Monitorear continuamente las áreas auditadas y realizar ajustes según sea necesario.</li>
+    </ul>
+    </li>
+    </ol>
+    <h3 id="conclusi-n">Conclusión</h3>
+    <p>La implementación de un sistema de auditoría médica en un hospital en Argentina requiere un enfoque estructurado y sistemático. Cada tipo de auditoría, ya sea concurrente, retrospectiva, externa o interna, tiene sus propios objetivos y metodologías específicas. Un plan de acción claro y bien definido garantiza que los objetivos se cumplan de manera eficiente, promoviendo la calidad y seguridad en la atención médica.</p>
+    
